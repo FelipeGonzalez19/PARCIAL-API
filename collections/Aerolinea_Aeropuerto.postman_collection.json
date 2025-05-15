@@ -1,25 +1,22 @@
 {
 	"info": {
-		"_postman_id": "868f61ca-ccbe-4474-beb3-c7c221c1aefb",
-		"name": "Aerolinea",
+		"_postman_id": "f4ced707-915d-487c-8e99-97c66240a5e8",
+		"name": "Aerolinea_Aeropuerto",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26173722",
-		"_collection_link": "https://miso-api-26.postman.co/workspace/Personal~0d8c447a-c9ad-4eef-95f3-a0c00d088056/collection/26173722-868f61ca-ccbe-4474-beb3-c7c221c1aefb?action=share&source=collection_link&creator=26173722"
+		"_collection_link": "https://miso-api-26.postman.co/workspace/Personal~0d8c447a-c9ad-4eef-95f3-a0c00d088056/collection/26173722-f4ced707-915d-487c-8e99-97c66240a5e8?action=share&source=collection_link&creator=26173722"
 	},
 	"item": [
 		{
-			"name": "aerolinea",
+			"name": "aerolinea-aeropuerto",
 			"item": [
 				{
-					"name": "Post aerolinea",
+					"name": "Post aeropuerto in aerolinea",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
-									"var data = pm.response.json()",
-									"pm.globals.set(\"aerolinea_1\", data.id)",
-									"",
 									"pm.test(\"Successful POST request\", function () {",
 									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
 									"});",
@@ -35,7 +32,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"nombre\": \"Aerolínea del Pacífico\",\n  \"descripcion\": \"Aerolínea regional con vuelos a destinos nacionales e internacionales.\",\n  \"fechaFundacion\": \"2001-05-20\",\n  \"paginaWeb\": \"https://www.aerolineadelpacifico.com\"\n}",
+							"raw": "{\n  \"nombre\": \"Mapuche\",\n  \"descripcion\": \"Cultura ancestral del sur de Chile\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -43,25 +40,28 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/aerolinea",
+							"raw": "{{base_url}}/aerolinea-aeropuerto/{{aerolinea_1}}/aeropuertos/{{aeropuerto_1}}",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"aerolinea"
+								"aerolinea-aeropuerto",
+								"{{aerolinea_1}}",
+								"aeropuertos",
+								"{{aeropuerto_1}}"
 							]
 						},
 						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
 					},
 					"response": [
 						{
-							"name": "Post aerolinea",
+							"name": "Post aeropuerto in aerolinea",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"nombre\": \"Aerolínea del Pacífico\",\n  \"descripcion\": \"Aerolínea regional con vuelos a destinos nacionales e internacionales.\",\n  \"fechaFundacion\": \"2001-05-20\",\n  \"paginaWeb\": \"https://www.aerolineadelpacifico.com\"\n}",
+									"raw": "{\n  \"nombre\": \"Mapuche\",\n  \"descripcion\": \"Cultura ancestral del sur de Chile\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -69,12 +69,15 @@
 									}
 								},
 								"url": {
-									"raw": "{{base_url}}/aerolinea",
+									"raw": "{{base_url}}/aerolinea-aeropuerto/{{aerolinea_1}}/aeropuertos/{{aeropuerto_1}}",
 									"host": [
 										"{{base_url}}"
 									],
 									"path": [
-										"aerolinea"
+										"aerolinea-aeropuerto",
+										"{{aerolinea_1}}",
+										"aeropuertos",
+										"{{aeropuerto_1}}"
 									]
 								}
 							},
@@ -92,15 +95,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "250"
+									"value": "399"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"fa-KbeTjQW99XAvQt7sxzIzPvdOa0g\""
+									"value": "W/\"18f-Q3T259EIaAdr8zNv/2LEj8TZYPI\""
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 15 May 2025 19:54:47 GMT"
+									"value": "Thu, 15 May 2025 20:42:48 GMT"
 								},
 								{
 									"key": "Connection",
@@ -112,21 +115,25 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": \"167f21b8-79f9-4c3b-9b45-4702d46368d2\",\n    \"nombre\": \"Aerolínea del Pacífico\",\n    \"descripcion\": \"Aerolínea regional con vuelos a destinos nacionales e internacionales.\",\n    \"fechaFundacion\": \"2001-05-20\",\n    \"paginaWeb\": \"https://www.aerolineadelpacifico.com\"\n}"
+							"body": "{\n    \"id\": \"dbabed74-3508-4683-a0fc-28a302f9ca23\",\n    \"nombre\": \"Aerolínea del Pacífico\",\n    \"descripcion\": \"Aerolínea regional con vuelos a destinos nacionales e internacionales.\",\n    \"fechaFundacion\": \"2001-05-20T05:00:00.000Z\",\n    \"paginaWeb\": \"https://www.aerolineadelpacifico.com\",\n    \"aeropuertos\": [\n        {\n            \"id\": \"10a095b5-9779-4033-8e74-bff382a8c244\",\n            \"nombre\": \"El Dorado\",\n            \"codigo\": \"ELD\",\n            \"pais\": \"Colombia\",\n            \"ciudad\": \"Bogotá\"\n        }\n    ]\n}"
 						}
 					]
 				},
 				{
-					"name": "Post aerolinea not valid",
+					"name": "Post aeropuerto not exists in aerolinea",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Successful POST request\", function () {",
-									"    pm.expect(pm.response.code).to.be.oneOf([412, 401]);",
+									"pm.test(\"Status code is 404\", function () {",
+									"   pm.response.to.have.status(404);",
 									"});",
-									""
+									"",
+									"pm.test(\"Get expected error message\", function () {",
+									"   var data = pm.response.json();",
+									"   pm.expect(data.message).to.eql(\"El aeropuerto no fue encontrado\");",
+									"});"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -138,7 +145,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"nombre\": \"Aerolínea Moonterra\",\n  \"descripcion\": \"Aerolínea internacional con vuelos a destinos nacionales\",\n  \"fechaFundacion\": \"2026-05-20\",\n  \"paginaWeb\": \"https://www.aeromoonterra.com\"\n}",
+							"raw": "{\n  \"nombre\": \"Mapuche\",\n  \"descripcion\": \"Cultura ancestral del sur de Chile\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -146,25 +153,28 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/aerolinea",
+							"raw": "{{base_url}}/aerolinea-aeropuerto/{{aerolinea_1}}/aeropuertos/00000000-0000-0000-0000-000000000000",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"aerolinea"
+								"aerolinea-aeropuerto",
+								"{{aerolinea_1}}",
+								"aeropuertos",
+								"00000000-0000-0000-0000-000000000000"
 							]
 						},
 						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
 					},
 					"response": [
 						{
-							"name": "Post aerolinea not valid",
+							"name": "Post aeropuerto not exists in aerolinea",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"nombre\": \"Aerolínea Moonterra\",\n  \"descripcion\": \"Aerolínea internacional con vuelos a destinos nacionales\",\n  \"fechaFundacion\": \"2026-05-20\",\n  \"paginaWeb\": \"https://www.aeromoonterra.com\"\n}",
+									"raw": "{\n  \"nombre\": \"Mapuche\",\n  \"descripcion\": \"Cultura ancestral del sur de Chile\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -172,271 +182,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{base_url}}/aerolinea",
+									"raw": "{{base_url}}/aerolinea-aeropuerto/{{aerolinea_1}}/aeropuertos/00000000-0000-0000-0000-000000000000",
 									"host": [
 										"{{base_url}}"
 									],
 									"path": [
-										"aerolinea"
-									]
-								}
-							},
-							"status": "Precondition Failed",
-							"code": 412,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "79"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"4f-yVkqmGVHzAPVbvvTyTwfLcWfyTo\""
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 15 May 2025 19:56:00 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"statusCode\": 412,\n    \"message\": \"La fecha de fundación debe ser una fecha pasada\"\n}"
-						}
-					]
-				},
-				{
-					"name": "Get aerolineas",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test('Number of aerolineas > ' + 0, function () {",
-									"   var data = pm.response.json()",
-									"   pm.expect(data.length).to.greaterThan(0)",
-									"});",
-									"",
-									"",
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/aerolinea",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"aerolinea"
-							]
-						},
-						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
-					},
-					"response": [
-						{
-							"name": "Get aerolineas",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/aerolinea",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"aerolinea"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "283"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"11b-D/xaouqXN5G7EQ6jU0KJqNakzyc\""
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 15 May 2025 19:56:42 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "[\n    {\n        \"id\": \"167f21b8-79f9-4c3b-9b45-4702d46368d2\",\n        \"nombre\": \"Aerolínea del Pacífico\",\n        \"descripcion\": \"Aerolínea regional con vuelos a destinos nacionales e internacionales.\",\n        \"fechaFundacion\": \"2001-05-20T05:00:00.000Z\",\n        \"paginaWeb\": \"https://www.aerolineadelpacifico.com\",\n        \"aeropuertos\": []\n    }\n]"
-						}
-					]
-				},
-				{
-					"name": "Get aerolinea by id",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"   pm.response.to.have.status(200);",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/aerolinea/{{aerolinea_1}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"aerolinea",
-								"{{aerolinea_1}}"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Get aerolinea by id",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/aerolinea/{{aerolinea_1}}",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"aerolinea",
-										"{{aerolinea_1}}"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "281"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"119-UHI3M9baURnsf2wdcwA2d8VTWNk\""
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 15 May 2025 19:57:23 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"id\": \"167f21b8-79f9-4c3b-9b45-4702d46368d2\",\n    \"nombre\": \"Aerolínea del Pacífico\",\n    \"descripcion\": \"Aerolínea regional con vuelos a destinos nacionales e internacionales.\",\n    \"fechaFundacion\": \"2001-05-20T05:00:00.000Z\",\n    \"paginaWeb\": \"https://www.aerolineadelpacifico.com\",\n    \"aeropuertos\": []\n}"
-						}
-					]
-				},
-				{
-					"name": "Get aerolinea by id not exists",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 404\", function () {",
-									"   pm.response.to.have.status(404);",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/aerolinea/00000000-0000-0000-0000-000000000000",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"aerolinea",
-								"00000000-0000-0000-0000-000000000000"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Get aerolinea by id not exists",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/aerolinea/00000000-0000-0000-0000-000000000000",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"aerolinea",
+										"aerolinea-aeropuerto",
+										"{{aerolinea_1}}",
+										"aeropuertos",
 										"00000000-0000-0000-0000-000000000000"
 									]
 								}
@@ -455,15 +208,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "76"
+									"value": "62"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"4c-uktgDiB0Ld+ZJfcNBj7eW7FmveE\""
+									"value": "W/\"3e-A0qN+pUogxGOQsODi8t0HAT4bk0\""
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 15 May 2025 19:57:35 GMT"
+									"value": "Thu, 15 May 2025 20:44:52 GMT"
 								},
 								{
 									"key": "Connection",
@@ -475,12 +228,291 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The aerolinea with the given id was not found\"\n}"
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El aeropuerto no fue encontrado\"\n}"
 						}
 					]
 				},
 				{
-					"name": "Update aerolinea",
+					"name": "Get aeropuertos in aerolinea",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/aerolinea-aeropuerto/{{aerolinea_1}}/aeropuertos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"aerolinea-aeropuerto",
+								"{{aerolinea_1}}",
+								"aeropuertos"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": [
+						{
+							"name": "Get aeropuertos in aerolinea",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/aerolinea-aeropuerto/{{aerolinea_1}}/aeropuertos",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"aerolinea-aeropuerto",
+										"{{aerolinea_1}}",
+										"aeropuertos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "120"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"78-Uk1xGJsZR+JR2ltAUNgcvXY3GDk\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 May 2025 20:47:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"10a095b5-9779-4033-8e74-bff382a8c244\",\n        \"nombre\": \"El Dorado\",\n        \"codigo\": \"ELD\",\n        \"pais\": \"Colombia\",\n        \"ciudad\": \"Bogotá\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get aeropuerto in aerolinea",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/aerolinea-aeropuerto/{{aerolinea_1}}/aeropuertos/{{aeropuerto_1}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"aerolinea-aeropuerto",
+								"{{aerolinea_1}}",
+								"aeropuertos",
+								"{{aeropuerto_1}}"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": [
+						{
+							"name": "Get aeropuerto in aerolinea",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/aerolinea-aeropuerto/{{aerolinea_1}}/aeropuertos/{{aeropuerto_1}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"aerolinea-aeropuerto",
+										"{{aerolinea_1}}",
+										"aeropuertos",
+										"{{aeropuerto_1}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "118"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"76-N9RtDnZ5krxL+RZic6YkCYg2aQw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 May 2025 20:48:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"10a095b5-9779-4033-8e74-bff382a8c244\",\n    \"nombre\": \"El Dorado\",\n    \"codigo\": \"ELD\",\n    \"pais\": \"Colombia\",\n    \"ciudad\": \"Bogotá\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get aeropuerto not exists in aerolinea",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Mapuche\",\n  \"descripcion\": \"Cultura ancestral del sur de Chile\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/aerolinea-aeropuerto/{{aerolinea_1}}/aeropuertos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"aerolinea-aeropuerto",
+								"{{aerolinea_1}}",
+								"aeropuertos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": [
+						{
+							"name": "Get aeropuerto not exists in aerolinea",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nombre\": \"Mapuche\",\n  \"descripcion\": \"Cultura ancestral del sur de Chile\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/aerolinea-aeropuerto/{{aerolinea_1}}/aeropuertos/00000000-0000-0000-0000-000000000000",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"aerolinea-aeropuerto",
+										"{{aerolinea_1}}",
+										"aeropuertos",
+										"00000000-0000-0000-0000-000000000000"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3e-A0qN+pUogxGOQsODi8t0HAT4bk0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 May 2025 20:49:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El aeropuerto no fue encontrado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update aeropuerto in aerolinea",
 					"event": [
 						{
 							"listen": "test",
@@ -501,7 +533,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"nombre\": \"Aeropacífico\",\n  \"descripcion\": \"Aerolínea regional con vuelos a destinos nacionales e internacionales.\",\n  \"fechaFundacion\": \"2001-05-20\",\n  \"paginaWeb\": \"https://www.aerolineadelpacifico.com\"\n}",
+							"raw": "{\n  \"nombre\": \"Cultura actualizada\",\n  \"descripcion\": \"Descripci\\u00f3n modificada\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -509,26 +541,28 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/aerolinea/{{aerolinea_1}}",
+							"raw": "{{base_url}}/aerolinea-aeropuerto/{{aerolinea_1}}/aeropuertos/{{aeropuerto_1}}",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"aerolinea",
-								"{{aerolinea_1}}"
+								"aerolinea-aeropuerto",
+								"{{aerolinea_1}}",
+								"aeropuertos",
+								"{{aeropuerto_1}}"
 							]
 						},
 						"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
 					},
 					"response": [
 						{
-							"name": "Update aerolinea",
+							"name": "Update aeropuerto in aerolinea",
 							"originalRequest": {
 								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"nombre\": \"Aeropacífico\",\n  \"descripcion\": \"Aerolínea regional con vuelos a destinos nacionales e internacionales.\",\n  \"fechaFundacion\": \"2001-05-20\",\n  \"paginaWeb\": \"https://www.aerolineadelpacifico.com\"\n}",
+									"raw": "{\n  \"nombre\": \"Cultura actualizada\",\n  \"descripcion\": \"Descripci\\u00f3n modificada\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -536,13 +570,15 @@
 									}
 								},
 								"url": {
-									"raw": "{{base_url}}/aerolinea/{{aerolinea_1}}",
+									"raw": "{{base_url}}/aerolinea-aeropuerto/{{aerolinea_1}}/aeropuertos/{{aeropuerto_1}}",
 									"host": [
 										"{{base_url}}"
 									],
 									"path": [
-										"aerolinea",
-										"{{aerolinea_1}}"
+										"aerolinea-aeropuerto",
+										"{{aerolinea_1}}",
+										"aeropuertos",
+										"{{aeropuerto_1}}"
 									]
 								}
 							},
@@ -560,15 +596,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "239"
+									"value": "399"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"ef-6RGDZqEzMmDnVwF34Ju/5rfSO5w\""
+									"value": "W/\"18f-Q3T259EIaAdr8zNv/2LEj8TZYPI\""
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 15 May 2025 19:58:49 GMT"
+									"value": "Thu, 15 May 2025 20:57:55 GMT"
 								},
 								{
 									"key": "Connection",
@@ -580,12 +616,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": \"8c0c0e78-2fad-47ef-ab55-95d5d1d295f8\",\n    \"nombre\": \"Aeropacífico\",\n    \"descripcion\": \"Aerolínea regional con vuelos a destinos nacionales e internacionales.\",\n    \"fechaFundacion\": \"2001-05-20\",\n    \"paginaWeb\": \"https://www.aerolineadelpacifico.com\"\n}"
+							"body": "{\n    \"id\": \"dbabed74-3508-4683-a0fc-28a302f9ca23\",\n    \"nombre\": \"Aerolínea del Pacífico\",\n    \"descripcion\": \"Aerolínea regional con vuelos a destinos nacionales e internacionales.\",\n    \"fechaFundacion\": \"2001-05-20T05:00:00.000Z\",\n    \"paginaWeb\": \"https://www.aerolineadelpacifico.com\",\n    \"aeropuertos\": [\n        {\n            \"id\": \"10a095b5-9779-4033-8e74-bff382a8c244\",\n            \"nombre\": \"El Dorado\",\n            \"codigo\": \"ELD\",\n            \"pais\": \"Colombia\",\n            \"ciudad\": \"Bogotá\"\n        }\n    ]\n}"
 						}
 					]
 				},
 				{
-					"name": "Update aerolinea not exists",
+					"name": "Update aeropuerto not exists in aerolinea",
 					"event": [
 						{
 							"listen": "test",
@@ -593,6 +629,11 @@
 								"exec": [
 									"pm.test(\"Status code is 404\", function () {",
 									"   pm.response.to.have.status(404);",
+									"});",
+									"",
+									"pm.test(\"Get expected error message\", function () {",
+									"   var data = pm.response.json();",
+									"   pm.expect(data.message).to.eql(\"El aeropuerto no fue encontrado\");",
 									"});"
 								],
 								"type": "text/javascript",
@@ -605,7 +646,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"nombre\": \"Aerolínea del Pacífico\",\n  \"descripcion\": \"Aerolínea regional con vuelos a destinos nacionales e internacionales.\",\n  \"fechaFundacion\": \"2001-05-20\",\n  \"paginaWeb\": \"https://www.aerolineadelpacifico.com\"\n}",
+							"raw": "{\n  \"nombre\": \"Cultura actualizada\",\n  \"descripcion\": \"Descripci\\u00f3n modificada\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -613,12 +654,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/aerolinea/00000000-0000-0000-0000-000000000000",
+							"raw": "{{base_url}}/aerolinea-aeropuerto/{{aerolinea_1}}/aeropuertos/00000000-0000-0000-0000-000000000000",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"aerolinea",
+								"aerolinea-aeropuerto",
+								"{{aerolinea_1}}",
+								"aeropuertos",
 								"00000000-0000-0000-0000-000000000000"
 							]
 						},
@@ -626,13 +669,13 @@
 					},
 					"response": [
 						{
-							"name": "Update aerolinea not exists",
+							"name": "Update country not exists",
 							"originalRequest": {
 								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"nombre\": \"Aerolínea del Pacífico\",\n  \"descripcion\": \"Aerolínea regional con vuelos a destinos nacionales e internacionales.\",\n  \"fechaFundacion\": \"2001-05-20\",\n  \"paginaWeb\": \"https://www.aerolineadelpacifico.com\"\n}",
+									"raw": "{\n    \"nombre\": \"Panamá\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -640,63 +683,34 @@
 									}
 								},
 								"url": {
-									"raw": "{{base_url}}/aerolinea/00000000-0000-0000-0000-000000000000",
+									"raw": "{{base_url}}/pais/00000000-0000-0000-0000-000000000000",
 									"host": [
 										"{{base_url}}"
 									],
 									"path": [
-										"aerolinea",
+										"pais",
 										"00000000-0000-0000-0000-000000000000"
 									]
 								}
 							},
 							"status": "Not Found",
 							"code": 404,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "86"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"56-2+3LZ/etkakfMn7gGsONpF8zHXM\""
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 15 May 2025 19:59:06 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
+							"_postman_previewlanguage": "Text",
+							"header": [],
 							"cookie": [],
-							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La aerolínea con el id proporcionado no fue encontrada\"\n}"
+							"body": "{\n   \"statusCode\": 404,\n   \"message\": \"The country with the given id was not found\"\n}"
 						}
 					]
 				},
 				{
-					"name": "Delete aerolinea by id",
+					"name": "Delete aeropuerto in aerolinea",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
 									"pm.test(\"Status code is 204\", function () {",
-									"   pm.response.to.have.status(204);",
+									"    pm.response.to.have.status(204);",
 									"});"
 								],
 								"type": "text/javascript",
@@ -708,30 +722,35 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/aerolinea/{{aerolinea_1}}",
+							"raw": "{{base_url}}/aerolinea-aeropuerto/{{aerolinea_1}}/aeropuertos/{{aeropuerto_1}}",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"aerolinea",
-								"{{aerolinea_1}}"
+								"aerolinea-aeropuerto",
+								"{{aerolinea_1}}",
+								"aeropuertos",
+								"{{aeropuerto_1}}"
 							]
-						}
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
 					},
 					"response": [
 						{
-							"name": "Delete aerolinea by id",
+							"name": "Delete aeropuerto in aerolinea",
 							"originalRequest": {
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}/aerolinea/{{aerolinea_1}}",
+									"raw": "{{base_url}}/aerolinea-aeropuerto/{{aerolinea_1}}/aeropuertos/{{aeropuerto_1}}",
 									"host": [
 										"{{base_url}}"
 									],
 									"path": [
-										"aerolinea",
-										"{{aerolinea_1}}"
+										"aerolinea-aeropuerto",
+										"{{aerolinea_1}}",
+										"aeropuertos",
+										"{{aeropuerto_1}}"
 									]
 								}
 							},
@@ -745,7 +764,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 15 May 2025 19:59:38 GMT"
+									"value": "Thu, 15 May 2025 20:57:20 GMT"
 								},
 								{
 									"key": "Connection",
@@ -762,7 +781,7 @@
 					]
 				},
 				{
-					"name": "Delete aerolinea by id not exists",
+					"name": "Delete aeropuerto not exists in aerolinea",
 					"event": [
 						{
 							"listen": "test",
@@ -770,6 +789,11 @@
 								"exec": [
 									"pm.test(\"Status code is 404\", function () {",
 									"   pm.response.to.have.status(404);",
+									"});",
+									"",
+									"pm.test(\"Get expected error message\", function () {",
+									"   var data = pm.response.json();",
+									"   pm.expect(data.message).to.eql(\"El aeropuerto no fue encontrado\");",
 									"});"
 								],
 								"type": "text/javascript",
@@ -781,29 +805,33 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/aerolinea/00000000-0000-0000-0000-000000000000",
+							"raw": "{{base_url}}/aerolinea-aeropuerto/{{aerolinea_1}}/aeropuertos/00000000-0000-0000-0000-000000000000",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"aerolinea",
+								"aerolinea-aeropuerto",
+								"{{aerolinea_1}}",
+								"aeropuertos",
 								"00000000-0000-0000-0000-000000000000"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "Delete aerolinea by id not exists",
+							"name": "Delete aeropuerto not exists in aerolinea",
 							"originalRequest": {
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}/aerolinea/00000000-0000-0000-0000-000000000000",
+									"raw": "{{base_url}}/aerolinea-aeropuerto/{{aerolinea_1}}/aeropuertos/00000000-0000-0000-0000-000000000000",
 									"host": [
 										"{{base_url}}"
 									],
 									"path": [
-										"aerolinea",
+										"aerolinea-aeropuerto",
+										"{{aerolinea_1}}",
+										"aeropuertos",
 										"00000000-0000-0000-0000-000000000000"
 									]
 								}
@@ -822,15 +850,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "76"
+									"value": "62"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"4c-uktgDiB0Ld+ZJfcNBj7eW7FmveE\""
+									"value": "W/\"3e-A0qN+pUogxGOQsODi8t0HAT4bk0\""
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 15 May 2025 19:59:49 GMT"
+									"value": "Thu, 15 May 2025 20:56:31 GMT"
 								},
 								{
 									"key": "Connection",
@@ -842,39 +870,22 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The aerolinea with the given id was not found\"\n}"
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El aeropuerto no fue encontrado\"\n}"
 						}
 					]
 				}
 			]
 		}
 	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"exec": [
-					""
-				]
-			}
-		}
-	],
 	"variable": [
 		{
 			"key": "base_url",
 			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000/api/v1",
 			"type": "default"
 		}
 	]
